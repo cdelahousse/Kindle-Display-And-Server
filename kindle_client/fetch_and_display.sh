@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SERVER=''
+SERVER='http://your-server.com'
 PORT=9876
 PNG_FNAME=img.png
 INDEX_FNAME=index

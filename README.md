@@ -19,7 +19,8 @@ This should work with any Kindle that has been Jailbroken.
         sudo pip3 install Pillow
 
 * Make sure port `9876` is forwarded to your server
-* Run `python3 server/server.py`
+* `cd server/`
+* Run `python3 server.py`
 
 The server will serve at `http://<your-ip>:9876`
 

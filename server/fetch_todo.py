@@ -2,9 +2,7 @@
 
 import urllib.request
 import re
-
-# What is the URL of your Todo List?
-TODO_URL=''
+from config import TODO_URL
 
 def fetch_todo_items():
     req = urllib.request.urlopen(TODO_URL)

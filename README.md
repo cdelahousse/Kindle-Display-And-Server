@@ -13,13 +13,13 @@ This should work with any Kindle that has been Jailbroken.
 
 ##Server
 
-* On Ubuntu, install the dependencies:
+* On Ubuntu Linux, install the dependencies:
 
         sudo apt-get install python3-pip libfreetype6-dev
         sudo pip3 install Pillow
 
 * Make sure port `9876` is forwarded to your server
-* Run `pyton3 server/server.py`
+* Run `python3 server/server.py`
 
 The server will serve at `http://<your-ip>:9876`
 

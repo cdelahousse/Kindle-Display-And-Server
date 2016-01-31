@@ -139,7 +139,6 @@ def gen_png_byte_stream(png_index):
 
     num_fns = len(fns)
     index_fn = png_index % num_fns
-    print(index_fn)
     render_fn = fns[index_fn]
 
     render_fn(img)

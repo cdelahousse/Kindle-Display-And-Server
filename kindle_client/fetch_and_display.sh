@@ -6,9 +6,10 @@ PNG_FNAME=img.png
 INDEX_FNAME=index
 CUTOFF_NUMBER=1000
 
+# Remember to run the following commands to
 # Prevent the screen saver and the kindle shutdown
-lipc-set-prop com.lab126.powerd preventScreenSaver 1
-/etc/init.d/netwatchd stop
+# lipc-set-prop com.lab126.powerd preventScreenSaver 1
+# /etc/init.d/netwatchd stop
 
 #Check for the existence of the file
 if [ ! -e $INDEX_FNAME ];
@@ -29,7 +30,6 @@ fi
 
 rm -f $PNG_FNAME
 wget -O $PNG_FNAME $SERVER:$PORT/$INDEX
-eips -c
 eips -c
 eips -g $PNG_FNAME
 

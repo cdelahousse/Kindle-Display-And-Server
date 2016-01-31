@@ -134,13 +134,13 @@ def render_random_quote(img):
     render_paragraph(draw, top, quote)
 
 def render_weather(bg):
-    weather_svg = fetch_weather_svg();
+    weather_svg = fetch_weather_svg()
 
     img_io = BytesIO()
     svg2png(bytestring=weather_svg, write_to=img_io)
     img_io.seek(0)
 
-    img = Image.open(img_io);
+    img = Image.open(img_io)
 
     #Add a white background
     bg.paste(img, img)

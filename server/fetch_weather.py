@@ -2,6 +2,7 @@
 # http://mpetroff.net/
 
 import datetime
+import io
 
 from xml.dom import minidom
 from urllib.request import urlopen
@@ -44,7 +45,7 @@ def fetch_weather_svg():
 
 
     # Open SVG to process
-    with open(WEATHER_IMAGE, 'r') as f:
+    with io.open(WEATHER_IMAGE, 'r',encoding='utf8') as f:
         svg_str = f.read()
 
     # Insert icons and temperatures

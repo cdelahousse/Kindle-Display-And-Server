@@ -2,9 +2,8 @@
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from gen_image import gen_png_byte_stream
+from config import PORT
 import re
-
-PORT=9876
 
 class KindleDisplayRequestHandler(BaseHTTPRequestHandler):
     def do_GET(client):

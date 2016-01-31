@@ -16,7 +16,7 @@ This should work with any Kindle that has been Jailbroken.
 * On Ubuntu Linux, install the dependencies:
 
         sudo apt-get install python3-pip libfreetype6-dev
-        sudo pip3 install Pillow
+        sudo pip3 install Pillow cairosvg
 
 * Make sure port `9876` is forwarded to your server
 * `cd server/`

@@ -4,7 +4,9 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 from io import BytesIO
+from cairosvg import svg2png
 from fetch_quotes import fetch_random_quote
+from fetch_weather import fetch_weather_svg
 import fetch_todo
 import re, textwrap
 
@@ -131,8 +133,25 @@ def render_random_quote(img):
     top = render_title(img, 'Quote:')
     render_paragraph(draw, top, quote)
 
+def render_weather(bg):
+    weather_svg = fetch_weather_svg();
 
-fns = [render_random_quote, render_now_todo_list, render_soon_todo_list]
+    img_io = BytesIO()
+    svg2png(bytestring=weather_svg, write_to=img_io)
+    img_io.seek(0)
+
+    img = Image.open(img_io);
+
+    #Add a white background
+    bg.paste(img, img)
+
+
+fns = [
+        render_random_quote,
+        render_now_todo_list,
+        render_soon_todo_list,
+        render_weather
+]
 
 def gen_png_byte_stream(png_index):
     img = Image.new('L', (WIDTH, HEIGHT), 'white')
@@ -151,6 +170,6 @@ def gen_png_byte_stream(png_index):
 
 if __name__ == "__main__":
     img = Image.new('L', (WIDTH, HEIGHT), 'white')
-    render_soon_todo_list(img)
+    render_weather(img)
     img.show()
 

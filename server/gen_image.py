@@ -99,6 +99,10 @@ def render_soon_todo_list(img):
     topy = render_title(img, '@soon Todo List')
     render_tagged_todo_list(img, topy, '@soon')
 
+def render_habits_list(img):
+    topy = render_title(img, 'Habits')
+    render_tagged_todo_list(img, topy, '@habit')
+
 def render_now_todo_list(img):
     topy = render_title(img, '@now Todo List')
     render_tagged_todo_list(img, topy, '@now')
@@ -150,7 +154,7 @@ fns = [
         render_random_quote,
         render_now_todo_list,
         render_soon_todo_list,
-        render_weather
+        render_habits_list,
 ]
 
 def gen_png_byte_stream(png_index):
